@@ -11,12 +11,20 @@ module.exports = {
       musicianId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {model: 'Musicians'}
+        references: {
+          model: 'Musicians',
+          // key: 'musicianId' 
+        },
+        onDelete: 'CASCADE'
       },
       instrumentId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {model: 'Instruments'}
+        references: {
+          model: 'Instruments',
+          // key: 'instrumentId'
+        },
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
